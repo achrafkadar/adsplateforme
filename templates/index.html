@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <p class="meta">Agency operations · Meta App Review</p>
+  <h1>Wenov Ads Platform</h1>
+  <p>
+    A secure workspace for managing client advertising accounts, campaign
+    operations, and messaging related to Meta and Google Ads programs.
+  </p>
+  <div class="actions">
+    {% if user %}
+      <a class="btn btn-primary" href="/dashboard">Open dashboard</a>
+    {% else %}
+      <a class="btn btn-primary" href="/login">Sign in</a>
+    {% endif %}
+    <a class="btn btn-ghost" href="/privacy">Privacy policy</a>
+  </div>
+</section>
+<section class="grid">
+  <article class="panel">
+    <h2>Client management</h2>
+    <p>Organize advertiser accounts, permissions, and delivery context for agency teams.</p>
+  </article>
+  <article class="panel">
+    <h2>Campaign oversight</h2>
+    <p>Review connected Meta and Google assets used for Serenity and other Wenov clients.</p>
+  </article>
+  <article class="panel">
+    <h2>Messaging inbox</h2>
+    <p>Placeholder surface for Page messaging workflows required during Meta App Review.</p>
+  </article>
+</section>
+{% endblock %}

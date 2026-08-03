@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section style="padding-bottom:2rem">
+  <p class="meta">Signed in as {{ user }}</p>
+  <h1 style="font-family:var(--font-display);letter-spacing:-0.02em;margin:0 0 0.75rem">Dashboard</h1>
+  <p style="color:var(--muted);max-width:54ch;margin:0 0 2rem">
+    Wenov Ads Platform helps agency operators manage Serenity and other client
+    advertising programs, connect Meta assets for App Review, and coordinate
+    day-to-day media buying workflows.
+  </p>
+</section>
+<section class="grid">
+  <article class="panel">
+    <h2>Serenity</h2>
+    <p>Client workspace for Serenity campaigns, reporting context, and account linkage used in Meta review demos.</p>
+  </article>
+  <article class="panel">
+    <h2>Client management</h2>
+    <p>Directory of managed advertisers, connection status, and operator access for Wenov teams.</p>
+  </article>
+  <article class="panel">
+    <h2>Messaging inbox</h2>
+    <p>Inbox placeholder for Facebook Page conversations and webhook-driven messaging features under review.</p>
+    <p style="margin:0;color:var(--accent)">No open threads — demo ready.</p>
+  </article>
+</section>
+{% endblock %}
