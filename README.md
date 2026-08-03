@@ -56,7 +56,9 @@ Open http://127.0.0.1:8000
 
 - `/` — public landing
 - `/login` — sign in
-- `/dashboard` — post-login overview (Serenity / clients / messaging placeholder)
+- `/dashboard` — post-login overview (Serenity / clients / messaging inbox link)
+- `/inbox` — demo Messaging inbox (auth required; WhatsApp + Instagram threads)
+- `/inbox/{id}` — thread detail + agent reply (in-memory demo store)
 - `/privacy` — privacy policy (Meta App Review)
 - `/health` — health check
 

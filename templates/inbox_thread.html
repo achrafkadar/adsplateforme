@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="thread-header">
+  <a class="back-link" href="/inbox">← Inbox</a>
+  <div class="thread-title-row">
+    <div>
+      <h1>{{ conversation.customer_name }}</h1>
+      <p class="meta" style="margin:0">{{ conversation.subject }}</p>
+    </div>
+    <span class="channel-badge channel-{{ conversation.channel }}">{{ conversation.channel_label }}</span>
+  </div>
+</section>
+
+<section class="thread-messages panel">
+  {% for m in conversation.messages %}
+  <div class="bubble-row bubble-{{ m.sender }}">
+    <div class="bubble">
+      <div class="bubble-body">{{ m.body }}</div>
+      <div class="bubble-meta">{{ "Agent" if m.sender == "agent" else "Customer" }} · {{ m.sent_at }}</div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<form class="reply-form panel" method="post" action="/inbox/{{ conversation.id }}/reply">
+  <label for="reply-body">Reply as Serenity agent</label>
+  <textarea id="reply-body" name="body" rows="3" required placeholder="Type your reply…"></textarea>
+  <button class="btn btn-primary" type="submit">Send</button>
+</form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="inbox-header">
+  <p class="meta">Serenity Secret Spa · Dubai</p>
+  <h1>Messaging inbox</h1>
+  <p class="reviewer-note">
+    Demo inbox for App Review — sample Serenity customer threads (WhatsApp / Instagram).
+  </p>
+</section>
+
+<section class="inbox-list">
+  {% for c in conversations %}
+  <a class="inbox-row" href="/inbox/{{ c.id }}">
+    <div class="inbox-row-main">
+      <div class="inbox-row-top">
+        <span class="inbox-name">{{ c.customer_name }}</span>
+        <span class="inbox-time">{{ c.last_at }}</span>
+      </div>
+      <div class="inbox-subject">{{ c.subject }}</div>
+      <div class="inbox-preview">{{ c.last_preview }}</div>
+    </div>
+    <div class="inbox-row-meta">
+      <span class="channel-badge channel-{{ c.channel }}">{{ c.channel_label }}</span>
+      {% if c.unread %}
+      <span class="unread-badge">{{ c.unread }}</span>
+      {% endif %}
+    </div>
+  </a>
+  {% else %}
+  <p class="meta">No conversations.</p>
+  {% endfor %}
+</section>
+{% endblock %}
